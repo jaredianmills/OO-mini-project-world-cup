@@ -19,11 +19,7 @@ class Tournament
   end
 
   def teams
-    tournament_teams = []
-    self.groups.each do |group|
-      tournament_teams += [group.team_1, group.team_2, group.team_3, group.team_4]
-    end
-    tournament_teams
+    groups.map {|group| group.teams}.flatten
   end
 
   def fans

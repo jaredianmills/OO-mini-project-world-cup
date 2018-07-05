@@ -15,7 +15,7 @@ class Fan
 
   def favorite_team_matches
     Match.all.select do |match|
-      match.team_1 == self.favorite_team || match.team_2 == self.favorite_team
+      match.teams.include?(self.favorite_team)
     end
   end
 

@@ -15,7 +15,7 @@ class Player
 
   def matches_played
     Match.all.select do |match|
-      match.team_1 == self.team || match.team_2 == self.team
+      match.teams.include?(self.team)
     end
   end
 
